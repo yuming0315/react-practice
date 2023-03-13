@@ -24,7 +24,7 @@ export default class TitelBar01 extends Component {
           onClick={this.onClickHandler.bind(this)}
           style={{ cursor: "pointer" }}
         >
-          Function Handler - Class
+          Function Handler - class
           <br />
           {
             // this.no VS this.state.no this.no가 업데이트되는 이유는 this.state.no를 다시 render 하면서 리렌더
