@@ -1,11 +1,12 @@
 {
-  "name": "kanbanboard",
+  "name": "ex04",
   "version": "1.0.0",
-  "description": "",
+  "description": "ex01: 전통적인 DOM API 기반의 애플리케이션",
+  "modules": true,
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack serve --config config/webpack.config.js --progress --mode development",
-    "build": "npx webpack --config config/webpack.config.js --mode production"
+    "debug": "npx webpack serve --config config/webpack.config.js --progress --mode development --env",
+    "build": "npx webpack --config config/webpack.config.js --mode production" 
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,6 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^9.1.2",
-    "babel-plugin-styled-components": "^2.0.7",
     "css-loader": "^6.7.3",
     "node-sass": "^8.0.0",
     "sass-loader": "^13.2.0",
@@ -28,7 +28,6 @@
   "dependencies": {
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-addons-update": "^15.6.3",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.8"
   }
