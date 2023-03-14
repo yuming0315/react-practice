@@ -5,24 +5,15 @@ import Clock from "./Clock";
 export default class App extends Component {
   constructor() {
     super(...arguments);
+    this.state = {
+      date: new Date(),
+    };
   }
 
   componentDidMount() {
+    while (new Date().getMilliseconds > 960) {}
     this.interval = setInterval(() => {
-      const { imgCoord } = this.state;
-      if (imgCoord === rspCoords.rock) {
-        this.setState({
-          imgCoord: rspCoords.scissor,
-        });
-      } else if (imgCoord === rspCoords.scissor) {
-        this.setState({
-          imgCoord: rspCoords.paper,
-        });
-      } else if (imgCoord === rspCoords.paper) {
-        this.setState({
-          imgCoord: rspCoords.rock,
-        });
-      }
+      this.setState({ date: new Date() });
     }, 1000);
   }
 
@@ -31,10 +22,15 @@ export default class App extends Component {
   }
 
   render() {
+    const { date } = this.state;
     return (
       <div className="clock-display">
         <h2>ex05 - Component LifeCycle Practice</h2>
-        <Clock hours={"11"} minutes={"02"} seconds={"30"} session={"am"} />
+        <Clock
+          hours={date.getHours()}
+          minutes={date.getMinutes()}
+          seconds={date.getSeconds()}
+        />
       </div>
     );
   }
