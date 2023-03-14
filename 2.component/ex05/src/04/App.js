@@ -10,13 +10,14 @@ export default function App() {
     while (new Date().getMilliseconds > 960) {}
     const interval = setInterval(() => {
       setTime(new Date());
+      setTicks((prev) => (prev + 1) % 60);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    setTicks(time.getSeconds());
-  }, [time]);
+  // useEffect(() => {
+  //   setTicks(time.getSeconds());
+  // }, [time]);
 
   return (
     <div>
