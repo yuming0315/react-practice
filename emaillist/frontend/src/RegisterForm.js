@@ -1,9 +1,17 @@
 import React from "react";
 import styles from "./assets/css/RegisterForm.css";
 
-export default function RegisterForm(props) {
+export default function RegisterForm({ callbackAddEmail }) {
+  const onSubmitHandler = (e) => {
+    callbackAddEmail(
+      e.target.firstName.value,
+      e.target.lastName.value,
+      e.target.email.value
+    );
+  };
+
   return (
-    <div className={styles.RegisterForm}>
+    <form className={styles.RegisterForm} onSubmit={onSubmitHandler}>
       <input
         type="text"
         name="firstName"
@@ -23,6 +31,6 @@ export default function RegisterForm(props) {
         className={styles.InputEmail}
       />
       <input type="submit" value="등록" />
-    </div>
+    </form>
   );
 }
