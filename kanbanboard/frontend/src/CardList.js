@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./assets/css/CardList.css";
 import Card from "./Card";
 
-export default function CardList({ title, cards, callback }) {
+export default function CardList({ title, cards }) {
   return (
     <div className={styles.CardList}>
       <h1>{title}</h1>
       {cards.map((card) => {
         card.key = card.no;
-        return <Card {...card} callback={callback} />;
+        return <Card {...card} />;
       })}
     </div>
   );
