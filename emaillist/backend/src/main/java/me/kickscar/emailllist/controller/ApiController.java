@@ -24,8 +24,8 @@ public class ApiController {
 	
 	@GetMapping("/api")
 	public ResponseEntity<JsonResult> read(@RequestParam(value="kw", required=true, defaultValue="") String keyword) {
-		
-		log.info("Request[GET /api]");
+		System.out.println(keyword);
+		//log.info("Request[GET /api]");
 		
 		return ResponseEntity
 				.status(HttpStatus.OK)
