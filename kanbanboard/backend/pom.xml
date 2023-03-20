@@ -101,6 +101,7 @@
 					<environmentVariables></environmentVariables>
 				</configuration>
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -111,17 +112,17 @@
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/resources/script</directory>
+								</resource>
+							</resources>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<outputDirectory>${basedir}/target</outputDirectory>
-					<resources>
-						<resource>
-							<directory>src/main/resources/script</directory>
-						</resource>
-					</resources>
-				</configuration>
-			</plugin>
+			</plugin>			
 		</plugins>
 	</build>
 </project>
