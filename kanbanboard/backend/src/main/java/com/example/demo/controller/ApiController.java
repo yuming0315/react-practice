@@ -64,4 +64,10 @@ public class ApiController {
 				}}));
 	}
 
+	@GetMapping("/hello")
+	public ResponseEntity<JsonResult> hello(){
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body(JsonResult.success("hello~~~"));
+	}
 }
