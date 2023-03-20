@@ -14,9 +14,4 @@ fi
 echo "starting [$APPLICATION_NAME]"
 cd $SCRIPT_DIR
 
-echo $PATH  >> $SCRIPT_DIR/launch.log
-echo java --version  >> $SCRIPT_DIR/launch.log
-echo $PID  >> $SCRIPT_DIR/launch.log
-echo $SCRIPT_DIR  >> $SCRIPT_DIR/launch.log
-
-# nohup java -Dspring.profiles.active=production -jar $SCRIPT_DIR/$APPLICATION_NAME.jar >> $SCRIPT_DIR/launch.log &
+nohup java -Dspring.profiles.active=production -jar $SCRIPT_DIR/$APPLICATION_NAME.jar >> $SCRIPT_DIR/launch.log &
